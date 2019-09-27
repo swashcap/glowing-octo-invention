@@ -1,0 +1,3 @@
+{
+  "*.{json,js,ts}": ["yarn format", "git add"]
+}
