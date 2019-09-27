@@ -1,0 +1,10 @@
+{
+  "name": "glowing-octo-invention",
+  "version": "1.0.0",
+  "description": "Demoing TypeGraphQL, Preact, SSR, and PWA all in one.",
+  "main": "index.js",
+  "repository": "git@github.com:swashcap/glowing-octo-invention.git",
+  "author": "Cory Reed",
+  "license": "Apache-2.0",
+  "private": true
+}
