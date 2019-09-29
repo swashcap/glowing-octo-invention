@@ -7,6 +7,8 @@ import morgan from 'morgan'
 import { ApolloServer } from 'apollo-server-express'
 import { buildSchema } from 'type-graphql'
 
+import { FeatureConfigurationResolver } from './featureConfigurationResolver'
+import { ProductResolver } from './productResolver'
 import { UserResolver } from './userResolver'
 
 const port = process.env.PORT || 3000
@@ -14,7 +16,7 @@ const port = process.env.PORT || 3000
 export const getApp = async () => {
   const app = express()
   const schema = await buildSchema({
-    resolvers: [UserResolver]
+    resolvers: [FeatureConfigurationResolver, ProductResolver, UserResolver]
   })
   const server = new ApolloServer({
     schema,

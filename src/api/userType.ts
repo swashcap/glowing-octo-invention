@@ -1,7 +1,12 @@
 import { ObjectType, Field, ID } from 'type-graphql'
 
-@ObjectType()
-export class User {
-  @Field(type => ID)
+import { NavigableEntity } from './utilityTypes'
+import { ScalableImageCollection } from './imageTypes'
+
+@ObjectType({ implements: NavigableEntity })
+export class User implements NavigableEntity {
+  @Field(type => ScalableImageCollection)
+  avatar: ScalableImageCollection
   id: string
+  url: string
 }
