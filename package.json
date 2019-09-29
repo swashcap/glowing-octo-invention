@@ -21,6 +21,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "clean": "find src -type f -name '*.js' -exec rm -rf {} \\+",
     "format": "prettier --write '*.{json,js}' 'src/**/*.ts'",
     "start": "node src/api/api"
   },
