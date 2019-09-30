@@ -15,18 +15,25 @@
     "@types/faker": "^4.1.5",
     "@types/graphql": "^14.5.0",
     "@types/morgan": "^1.7.37",
+    "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.5",
     "lint-staged": "^9.4.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
-    "typescript": "^3.6.3"
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.2.0",
+    "typescript": "^3.6.3",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
   },
   "scripts": {
     "build": "run-s build:*",
     "build:api": "tsc --build api/tsconfig.json",
-    "clean": "find src -type f -name '*.js' -exec rm -rf {} \\+",
-    "format": "prettier --write '*.{json,js}' '{api,ui}/**/*.{json,ts,tsx}'",
-    "start": "node src/api/api"
+    "build:ui": "NODE_ENV=production webpack",
+    "clean": "./scripts/clean.sh",
+    "format": "prettier --write '*.{json,js}' '{api,ui}/**/*.{html,json,ts,tsx}'",
+    "start": "webpack-dev-server"
   },
   "dependencies": {
     "apollo-server-express": "^2.9.4",
@@ -36,6 +43,8 @@
     "graphql": "^14.5.8",
     "hard-rejection": "^2.1.0",
     "morgan": "^1.9.1",
+    "preact": "^10.0.0-rc.3",
+    "preact-router": "^3.0.1",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^0.17.5"
   }

@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "jsxFactory": "h",
+    "lib": ["dom"],
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "es2015"
+  },
+  "extends": "../tsconfig.json"
+}

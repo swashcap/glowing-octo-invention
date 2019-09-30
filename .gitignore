@@ -62,4 +62,6 @@ typings/
 
 .DS_Store
 api/**/*.js
+ui/**/*.js.map
 ui/**/*.js
+dist
