@@ -61,4 +61,5 @@ typings/
 .next
 
 .DS_Store
-src/**/*.js
+api/**/*.js
+ui/**/*.js

@@ -5,7 +5,7 @@ import { Field, Int, ObjectType } from 'type-graphql'
 })
 export class GlobalFeatureConfiguration {
   @Field()
-  isSignupButtonEnabled: boolean
+  isSignupButtonEnabled: boolean = false
 }
 
 @ObjectType({
@@ -17,11 +17,11 @@ export class SearchFeatureConfiguration {
     description:
       'A user interface message to present when a search yields no results'
   })
-  noResultsText: string
+  noResultsText: string = ''
   @Field(type => Int, {
     description: 'The default number of search results to request'
   })
-  resultsCount: number
+  resultsCount: number = 20
 }
 
 @ObjectType({

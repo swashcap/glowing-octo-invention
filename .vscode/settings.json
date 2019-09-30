@@ -1,6 +1,7 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "files.exclude": {
-    "src/**/*.js": true
+    "api/src/**/*.js": true,
+    "ui/src/**/*.js": true
   }
 }

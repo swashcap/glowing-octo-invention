@@ -1,4 +1,4 @@
-import { ObjectType, Field, ID } from 'type-graphql'
+import { ObjectType, Field } from 'type-graphql'
 
 import { NavigableEntity } from './utilityTypes'
 import { ScalableImageCollection } from './imageTypes'
