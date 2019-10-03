@@ -1,10 +1,9 @@
-import { FunctionComponent, h } from 'preact'
-import Router, { RoutableProps } from 'preact-router'
+import { h } from 'preact'
+import Router from 'preact-router'
 
+import { Home } from './routes/Home'
 import { InitialData, useInitialData } from '../api/initialData'
-
-const Home: FunctionComponent<RoutableProps> = () => <div>home</div>
-const Search: FunctionComponent<RoutableProps> = () => <div>About</div>
+import { Search } from './routes/Search'
 
 export const App = () => {
   const initialData = useInitialData()
