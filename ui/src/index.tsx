@@ -1,10 +1,12 @@
 import { h, render } from 'preact'
 
+import { App } from './components/App'
+
 const mount = () => {
   const appEl = document.getElementById('app')
 
   if (appEl) {
-    render(<h1>Hello, world!</h1>, appEl)
+    render(<App />, appEl)
   }
 }
 

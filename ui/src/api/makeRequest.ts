@@ -59,6 +59,7 @@ export const makeRequest = async <Data extends any = any>(
       Accept: 'application/json',
       'Content-Type': 'application/json'
     },
+    method: 'POST',
     ...requestInit
   })
 
@@ -68,6 +69,10 @@ export const makeRequest = async <Data extends any = any>(
   try {
     json = await response.json()
   } catch (error) {
+    if (process.env.NODE_ENV !== 'production') {
+      console.error(error)
+    }
+
     jsonParseError = error
   }
 
@@ -110,9 +115,3 @@ export const makeRequest = async <Data extends any = any>(
 
   return json.data
 }
-
-export const makeQuery = <D>(options: ApiOptions) =>
-  makeRequest<D>(options, { method: 'GET' })
-
-export const makeMutation = <D>(options: ApiOptions) =>
-  makeRequest<D>(options, { method: 'POST' })
