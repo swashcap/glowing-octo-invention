@@ -5,6 +5,8 @@ import { Home } from './routes/Home'
 import { InitialData, useInitialData } from '../api/initialData'
 import { Search } from './routes/Search'
 
+import '../../../node_modules/tachyons/css/tachyons.css'
+
 export const App = () => {
   const initialData = useInitialData()
 

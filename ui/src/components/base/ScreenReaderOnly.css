@@ -1,0 +1,28 @@
+/**
+ * Use H5BP's `.screen-reader-only` classes:
+ * https://github.com/h5bp/main.css/blob/d95371fde06e52e965e828516acdb52630837ac1/src/_helpers.css#L13-L50
+ */
+.screen-reader-only,
+.screen-reader-only-content {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.screen-reader-only:active,
+.screen-reader-only:focus,
+.screen-reader-only-focus-trap:active .screen-reader-only-content,
+.screen-reader-only-focus-trap:focus .screen-reader-only-content {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}

@@ -1,4 +1,11 @@
-import { FunctionComponent, h } from 'preact'
+import { Fragment, FunctionComponent, h } from 'preact'
 import { RoutableProps } from 'preact-router'
 
-export const Home: FunctionComponent<RoutableProps> = () => <div>Home</div>
+import { Header } from '../base/Header'
+
+export const Home: FunctionComponent<RoutableProps> = () => (
+  <Fragment>
+    <Header />
+    <main class="center mw8 ph3" id="content"></main>
+  </Fragment>
+)

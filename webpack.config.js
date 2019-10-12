@@ -35,8 +35,7 @@ module.exports = {
   },
   devtool: 'source-map',
   entry: {
-    main: './ui/src/index.tsx',
-    styles: './ui/src/styles.css'
+    main: './ui/src/index.tsx'
   },
   mode: isEnvProd ? 'production' : 'development',
   module: {
