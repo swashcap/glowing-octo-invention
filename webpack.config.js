@@ -4,6 +4,29 @@ const path = require('path')
 
 const isEnvProd = process.env.NODE_ENV === 'production'
 
+const getStyleLoaders = () => {
+  if (isEnvProd) {
+    return [
+      // https://webpack.js.org/plugins/mini-css-extract-plugin/
+      {
+        loader: MiniCssExtractPlugin.loader,
+        options: {
+          hmr: !isEnvProd
+        }
+      },
+      {
+        loader: 'css-loader',
+        options: {
+          modules: false
+        }
+      },
+      'postcss-loader'
+    ]
+  }
+
+  return ['style-loader', 'css-loader', 'postcss-loader']
+}
+
 module.exports = {
   devServer: {
     contentBase: './ui/src/',
@@ -20,17 +43,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          // https://webpack.js.org/plugins/mini-css-extract-plugin/
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: !isEnvProd
-            }
-          },
-          'css-loader',
-          'postcss-loader'
-        ]
+        use: getStyleLoaders()
       },
       {
         exclude: /node_modules/,
