@@ -4,8 +4,8 @@ import { Field, Int, ObjectType } from 'type-graphql'
   description: 'Feature configuration that applies to the entire application'
 })
 export class GlobalFeatureConfiguration {
-  @Field()
-  isSignupButtonEnabled: boolean = false
+  @Field({ defaultValue: false })
+  isSignupButtonEnabled: boolean
 }
 
 @ObjectType({
